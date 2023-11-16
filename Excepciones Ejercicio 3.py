@@ -12,6 +12,6 @@ def mes(num):
 
 #Si el numero pasado como parametro no es valido (en este caso > de 1 y < de 12) se fuerza una excepcion
 
-num = 10
+num = int(input("Ingrese el numero del mes: ")
 nombre=mes(num)
 print(nombre)
