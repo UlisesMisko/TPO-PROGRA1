@@ -1,7 +1,7 @@
 def contarvocales(palabra):#contar las vocales de cada palabra
     conteo_vocales = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
 
-    #Lo vimos con Thompson el uso del replace, pero no me funciona.
+    #No me funciona.
     palabra = palabra.replace(',', '').replace('.', '') #reemplaza las comas y puntos por espacios vacios
 
     for letra in palabra:#itera sobre cada letra y al encontrar una vocal la suma en el diccionario
