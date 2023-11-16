@@ -10,8 +10,8 @@ def concatenar_colas(cola1, cola2):
         
 
 #PROGRAMA PRINCIPAL
-cola1 = [random.randint(0, 10) for _ in range(3)]
-cola2 = [random.randint(0, 10) for _ in range(4)]
+cola1 = [random.randint(0, 10) for i in range(3)]
+cola2 = [random.randint(0, 10) for i in range(4)]
 
 print("Cola 1:", cola1)
 print("Cola 2:", cola2)
