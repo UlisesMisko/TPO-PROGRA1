@@ -19,7 +19,8 @@ def cant_goles(archivo):      #Muestra los 3 equipos con mayores goles
 
 
 def dif_gol(archivo, equipos_lst):     #Mostrar las diferencias de goles DE TODAS las fechas para aquellos 3 equipos que tengan mas goles en todas las fechas FIFA.
-    resultados_por_equipo = {equipo: {} for equipo in equipos_lst}        """Uso diccionario por comprension y ademas agrego otro diccionario dentro para manejar de manera mas eficiente los valores como [fecha].
+    resultados_por_equipo = {equipo: {} for equipo in equipos_lst}        """Uso diccionario por comprension y ademas agrego otro diccionario dentro para manejar de manera mas eficiente los valores
+                                                                             ya que dentro de cada equipo tengo un diccionario con las claves que son las fechas y el resultado que son la diferencia de goles en cada fecha
                                                                              Esto fue uno de los temas que mas tuve que investigar por mi propia cuenta. Solicito si es posible una aclaracion.""" 
     for columnas in archivo:
         fecha, eq_loc, eq_vis, eq_marcador = columnas[:4]       
