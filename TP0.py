@@ -2,7 +2,7 @@ from def_validacion import validacion
 from def_validacion import archivoo
 
 
-#Muestra los 3 equipos con mayores goles
+#Muestra los 3 equipos con mayores goles.
 def cant_goles(archivo):
     lista = [columna[3] for columna in archivo]
     lista2 = []
@@ -19,7 +19,7 @@ def cant_goles(archivo):
     return lista_m, equipos_lst   
 
 
-#Mostrar las diferencias de goles DE TODAS las fechas para aquellos 3 equipos que tengan mas goles en todas las fechas FIFA.    
+#Muestra las diferencias de goles DE TODAS las fechas para aquellos 3 equipos mas goleadores de la FIFA.    
 def dif_gol(archivo, equipos_lst):     
     resultados_por_equipo = {equipo: {} for equipo in equipos_lst} 
     
@@ -37,7 +37,7 @@ def dif_gol(archivo, equipos_lst):
     return resultados_por_equipo
 
     
-# Mostrar el equipo/s con la mayor/es diferencia de gol/es en un partido.    
+# Muestra el/los equipo/s con la mayor/es diferencia de gol/es en un partido.    
 def max_dif(resultados_por_equipo):
     max_dif_equipo, max_dif = [], 0   
 
