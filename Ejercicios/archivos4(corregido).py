@@ -1,3 +1,5 @@
+# La correcion fue que se cerraba y abria el archivo cada vez que recorre cada registro
+
 def grabararchivo(arch,registro):
   try:
     arch = open(arch, "at")
