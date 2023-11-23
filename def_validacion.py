@@ -26,7 +26,7 @@ def archivoo():   #Se encarga de abrir el archivo, si es que existe.
         return lista
         
     except IOError:
-        print("Archivo no encontrado")
+        print("Archivo no encontrado. El archivo de texto tiene que estar en la misma carpeta que el programa.")
     finally:
             archivo.close()    
 
