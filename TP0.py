@@ -1,39 +1,41 @@
-from def_validacion import validacion
-from def_validacion import archivoo
+from def_validaciom import validacion
+from def_validaciom import archivoo
 
-def cant_goles(archivo):
-#Muestra los 3 equipos con mayores goles.
-    lista = [columna[3] for columna in archivo]
+def cant_goles(eq_marcador):
+    # Muestra los 3 equipos con mayores goles.
     lista2 = []
-        
-    for elemento in lista:
-        x = lista.count(elemento)
-        tuplaA = (x,elemento)      
+    
+    for elemento in eq_marcador:
+        x = eq_marcador.count(elemento)
+        tuplaA = (x, elemento)
         if tuplaA not in lista2:
             lista2.append(tuplaA)
     lista2.sort(reverse=True)
     
     lista_m = lista2[:3]
     equipos_lst = [tupla[1] for tupla in lista_m]
-    return lista_m, equipos_lst   
+    return lista_m, equipos_lst
 
 
     
-def dif_gol(archivo, equipos_lst):
+def dif_gol(fechas, eq_loc_lista, eq_vis_lista, eq_marcador_lista, equipos_lst):
 #Muestra las diferencias de goles DE TODAS las fechas para aquellos 3 equipos mas goleadores de la FIFA.   
-    
     resultados_por_equipo = {equipo: {} for equipo in equipos_lst}  """Creamos una biblioteca dentro de otra para poder manejar eficientemente la clave-valor
                                                                        (Fecha:Dif de goles) para cada equipo de los mas anotadores en las fechas FIFA"""                                           
-    for columnas in archivo:
-        fecha, eq_loc, eq_vis, eq_marcador = columnas[:4]            
+  for i in range(len(fechas)):
+        fecha = fechas[i]
+        eq_loc = eq_loc_lista[i]
+        eq_vis = eq_vis_lista[i]
+        eq_marcador = eq_marcador_lista[i]
+
         for equipo in equipos_lst:
-            if equipo in [eq_loc, eq_vis]:                
+            if equipo in [eq_loc, eq_vis]:
                 if fecha not in resultados_por_equipo[equipo]:
                     resultados_por_equipo[equipo][fecha] = 0
                 if eq_marcador == equipo:
-                    resultados_por_equipo[equipo][fecha] += 1 
+                    resultados_por_equipo[equipo][fecha] += 1
                 else:
-                    resultados_por_equipo[equipo][fecha] -= 1                   
+                    resultados_por_equipo[equipo][fecha] -= 1
     return resultados_por_equipo
 
 
@@ -52,13 +54,12 @@ def max_dif(resultados_por_equipo):
     return max_dif_equipo, max_dif
 
 
-def lectura(lista):
-    archivo = lista
+def lectura(fechas, eq_loc, eq_vis, eq_marcador):
     
-    #Printea funcion: Cant_goles
-    lista_m,equipos_lst = cant_goles(archivo)
+    # Printea función: cant_goles
+    lista_m, equipos_lst = cant_goles(eq_marcador)
     print("Los equipos con mayor cantidad de goles son:")
-    for pos,val in enumerate(lista_m,1):
+    for pos, val in enumerate(lista_m, 1):
         print(f"{pos}° {val[1]} con {val[0]} goles.")
         
         
@@ -82,8 +83,8 @@ def lectura(lista):
 
 def main():
     validacion()
-    lista = archivoo()
-    lectura(lista)
+    fechas, eq_loc, eq_vis, eq_marcador = archivoo()
+    lectura(fechas, eq_loc, eq_vis, eq_marcador)
 
 if __name__ == "__main__":
     main()
