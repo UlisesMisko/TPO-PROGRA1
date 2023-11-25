@@ -22,20 +22,20 @@ def dif_gol(fechas, eq_loc_lista, eq_vis_lista, eq_marcador_lista, equipos_lst):
 #Muestra las diferencias de goles DE TODAS las fechas para aquellos 3 equipos mas goleadores de la FIFA.   
     resultados_por_equipo = {equipo: {} for equipo in equipos_lst}  """Creamos una biblioteca dentro de otra para poder manejar eficientemente la clave-valor
                                                                        (Fecha:Dif de goles) para cada equipo de los mas anotadores en las fechas FIFA"""                                           
-      for i in range(len(fechas)):
-            fecha = fechas[i]
-            eq_loc = eq_loc_lista[i]
-            eq_vis = eq_vis_lista[i]
-            eq_marcador = eq_marcador_lista[i]
+    for i in range(len(fechas)):
+        fecha = fechas[i]
+        eq_loc = eq_loc_lista[i]
+        eq_vis = eq_vis_lista[i]
+        eq_marcador = eq_marcador_lista[i]
     
-            for equipo in equipos_lst:
-                if equipo in [eq_loc, eq_vis]:
-                    if fecha not in resultados_por_equipo[equipo]:
-                        resultados_por_equipo[equipo][fecha] = 0
-                    if eq_marcador == equipo:
-                        resultados_por_equipo[equipo][fecha] += 1
-                    else:
-                        resultados_por_equipo[equipo][fecha] -= 1
+        for equipo in equipos_lst:
+            if equipo in [eq_loc, eq_vis]:
+                if fecha not in resultados_por_equipo[equipo]:
+                    resultados_por_equipo[equipo][fecha] = 0
+                if eq_marcador == equipo:
+                    resultados_por_equipo[equipo][fecha] += 1
+                else:
+                    resultados_por_equipo[equipo][fecha] -= 1
         return resultados_por_equipo
 
 
