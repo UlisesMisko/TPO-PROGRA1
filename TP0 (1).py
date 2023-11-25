@@ -8,7 +8,7 @@ def cant_goles(eq_marcador):
     
     for elemento in eq_marcador:
         x = eq_marcador.count(elemento)
-        tuplaA = (x, elemento)
+        tuplaA = (s, elemento)
         if tuplaA not in lista2:
             lista2.append(tuplaA)
     lista2.sort(reverse=True)
