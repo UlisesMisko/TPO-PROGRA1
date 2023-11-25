@@ -22,7 +22,7 @@ def archivoo():   # Se encarga de abrir el archivo, si es que existe.
         archivo = open(x, 'r', encoding='utf-8')
         
         for linea in archivo:
-            columnas = linea.strip().split(',')
+            columnas = linea.strip().split(',')    #No guardamos todo en memoria,con un solo ciclo tengo todos mis datos para trabajar con el programa
             fechas.append(columnas[0])
             eq_loc.append(columnas[1])
             eq_vis.append(columnas[2])
