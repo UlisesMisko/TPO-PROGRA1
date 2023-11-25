@@ -36,7 +36,7 @@ def dif_gol(fechas, eq_loc_lista, eq_vis_lista, eq_marcador_lista, equipos_lst):
                     resultados_por_equipo[equipo][fecha] += 1
                 else:
                     resultados_por_equipo[equipo][fecha] -= 1
-        return resultados_por_equipo
+    return resultados_por_equipo
 
 
 def max_dif(resultados_por_equipo):
