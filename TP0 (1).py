@@ -1,4 +1,4 @@
-import time
+import time                                    #Importamos este modulo para que el cliente tenga nocion del tiempo que tarda el programa.
 from def_validaciom import validacion
 from def_validaciom import archivoo
 
@@ -85,9 +85,9 @@ def lectura(fechas, eq_loc, eq_vis, eq_marcador):
 def main():
     validacion()
     start_time = time.time()
-    fechas, eq_loc, eq_vis, eq_marcador = archivoo()
+    fechas, eq_loc, eq_vis, eq_marcador = archivoo()        #Importamos cada columna en filas independientes
     lectura(fechas, eq_loc, eq_vis, eq_marcador)
-    elapsed_time = time.time() - start_time
+    elapsed_time = time.time() - start_time                 #Tempo total de ejecucion
     print(f"\nTiempo de ejecución: {elapsed_time} segundos")
 
 if __name__ == "__main__":
